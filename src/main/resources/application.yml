@@ -1,0 +1,38 @@
+report:
+  path-jasper: /report
+  path-logo: /report/logo.png
+  path-logo-coffee: /report/coffee_stain.png
+  path-client-simple: /report/client/simple
+  path-client-details: /report/client/details
+  report-header: header
+
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+    context-path: ${CONTEXT_PATH:/api/v1}
+  port: ${SERVER_PORT:8083}
+spring:
+  messages:
+    encoding: utf-8
+    basename: i18n.message
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+  application:
+    name: jasper-report
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jasper-report?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  flyway:
+    url: jdbc:mysql://localhost:3306/jasper-report?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+    user: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:210683}
