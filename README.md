@@ -33,6 +33,8 @@ Abra o projeto no Intellij e edite o arquivo <code>***application.yml***</code> 
 
 Agora entre na classe <code>***JasperReportApplication***</code> e execute o método <code>***main***</code>.
 
+Quando o projeto iniciar, o banco e as tabelas serão criadas através de migrations.
+
 No <code>***Postman***</code>, utilize o curl abaixo para gerar o relatório.
 #### CURL
  ```
