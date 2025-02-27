@@ -34,5 +34,5 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   flyway:
     url: jdbc:mysql://localhost:3306/jasper-report?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
-    user: ${DATASOURCE_USERNAME:root}
-    password: ${DATASOURCE_PASSWORD:210683}
+    user: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
