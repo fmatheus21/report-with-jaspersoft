@@ -1,4 +1,4 @@
-package com.fmatheus.app.controller.rule;
+package com.fmatheus.app.controller.facade;
 
 import com.fmatheus.app.controller.constant.FormatConstant;
 import com.fmatheus.app.controller.dto.report.client.ReportDetails;
@@ -19,10 +19,10 @@ import java.util.Collections;
 
 @RequiredArgsConstructor
 @Component
-public class ClientReportRule {
+public class ClientReportFacade {
 
     private final ClientService clientService;
-    private final ReportRule reportRule;
+    private final ReportFacade reportFacade;
 
     public void findAll(HttpServletResponse response, ReportTypeEnum type) {
         this.printOut(response, type);
@@ -30,7 +30,7 @@ public class ClientReportRule {
 
     private void printOut(HttpServletResponse response, ReportTypeEnum type) {
         try {
-            this.reportRule.createReport(response, this.converterReportList(), type);
+            this.reportFacade.createReport(response, this.converterReportList(), type);
         } catch (JRException | IOException e) {
             throw new JasperException(e.getMessage());
         }

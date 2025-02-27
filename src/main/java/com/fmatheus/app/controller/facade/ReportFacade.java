@@ -1,4 +1,4 @@
-package com.fmatheus.app.controller.rule;
+package com.fmatheus.app.controller.facade;
 
 import com.fmatheus.app.config.properties.ReportProperties;
 import com.fmatheus.app.controller.dto.report.client.Header;
@@ -26,11 +26,11 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @Component
-public class ReportRule {
+public class ReportFacade {
     private static final String JRXML = ".jrxml";
     private static final String JASPER = ".jasper";
     private static final String SEPARATOR = File.separator;
-    private static final Logger log = LoggerFactory.getLogger(ReportRule.class);
+    private static final Logger log = LoggerFactory.getLogger(ReportFacade.class);
     private String pathReport;
     private String pathSubReport;
     private String pathHeader;
